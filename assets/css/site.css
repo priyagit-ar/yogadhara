@@ -40,6 +40,7 @@
   --river: #2F6466;
   --turmeric: #D9A21B;
   --turmeric-pale: #F4E4B5;
+  --olive: #67694E;   /* the dark olive of the logo's brush strokes */
   --line: #D4DBD5;   /* price table rules and card borders */
   --soft: #F8F9F4;   /* highlighted price rows and boxes */
 
@@ -136,7 +137,7 @@ mark.todo {
 .site-header.is-scrolled { border-bottom-color: var(--mist); }
 .header-inner { display: flex; align-items: center; gap: 1.5rem; min-height: 4.5rem; }
 .brand { display: inline-flex; align-items: center; gap: 0.6rem; color: var(--indigo); text-decoration: none; font: 400 1.3rem/1 var(--serif); margin-right: auto; }
-.brand svg { width: 2.1rem; height: 2.1rem; flex: none; }
+.brand img { width: 3rem; height: 3rem; flex: none; }
 .brand:hover { color: var(--indigo); }
 .nav ul { display: flex; gap: 1.6rem; }
 .nav a { color: var(--indigo); text-decoration: none; padding-block: 0.4rem; }
@@ -177,6 +178,7 @@ mark.todo {
 /* Very small phones: show only the other language */
 @media (max-width: 23rem) {
   .brand { font-size: 1.15rem; }
+  .brand img { width: 2.3rem; height: 2.3rem; }
   .lang { padding: 0; }
   .lang [aria-current] { display: none; }
 }
@@ -189,28 +191,25 @@ mark.todo {
 .lede { font-size: clamp(1.15rem, 1.7vw, 1.3rem); color: var(--indigo-soft); max-width: 31rem; }
 .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
 
-.hero-mark { margin: 0; justify-self: center; text-align: center; color: var(--river); }
-.dhara { display: block; font-family: var(--serif); font-size: clamp(6.5rem, 17vw, 13.5rem); line-height: 1.1; }
-.flow { display: block; width: 100%; max-width: 26rem; height: auto; margin: -1.4rem auto 0; overflow: visible; }
-.flow .stream { fill: none; stroke: var(--river); stroke-width: 2; stroke-linecap: round; }
-.flow .stream-2 { stroke: var(--indigo-soft); stroke-width: 1.25; opacity: 0.55; }
-.flow .sun { fill: var(--turmeric); }
-.hero-mark figcaption { margin-top: 1rem; font-size: 1.05rem; color: var(--indigo-soft); }
+.hero-mark { margin: 0; justify-self: center; text-align: center; }
+.hero-logo { display: block; width: 100%; max-width: 25rem; height: auto; margin: 0 auto; }
+.hero-mark figcaption { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; margin-top: 0.5rem; }
+.hero-mark .dhara { font: 400 2.75rem/1.15 var(--serif); color: var(--olive); }
+.hero-mark .dhara-meaning { font-size: 1.05rem; color: var(--indigo-soft); }
 .hero-mark figcaption i { font-family: var(--serif); font-size: 1.2em; color: var(--indigo); }
 
-/* The one orchestrated moment: the stream draws itself once, then the sun appears */
+/* The one orchestrated moment: the logo rises into view, then its name */
 @media (prefers-reduced-motion: no-preference) {
-  .flow .stream { stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 2.6s cubic-bezier(.45,.05,.35,1) 0.3s forwards; }
-  .flow .stream-2 { animation-delay: 0.6s; }
-  .flow .sun { opacity: 0; transform-origin: center; animation: rise 1.2s ease-out 2.2s forwards; }
+  .hero-logo { opacity: 0; animation: rise 1.4s ease-out 0.2s forwards; }
+  .hero-mark figcaption { opacity: 0; animation: rise 1.2s ease-out 1s forwards; }
 }
-@keyframes draw { to { stroke-dashoffset: 0; } }
-@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
 @media (max-width: 52rem) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-mark { order: -1; justify-self: start; text-align: left; }
-  .flow { margin-left: 0; max-width: 18rem; }
+  .hero-logo { max-width: 12.5rem; margin: 0; }
+  .hero-mark figcaption { align-items: flex-start; }
 }
 
 /* Sections */

@@ -16,7 +16,7 @@ de/datenschutz.html   Datenschutzerklärung (German)
 assets/css/           one stylesheet, shared by both languages
 assets/js/            menu, WhatsApp form, mobile booking bar, language switch
 assets/fonts/         Tiro Devanagari Sanskrit + Mukta (SIL Open Font License)
-assets/img/           photos, link-preview images (EN and DE), icons
+assets/img/           photos, logo, link-preview images (EN and DE), icons
 ```
 
 ## Two languages
@@ -64,6 +64,16 @@ After replacing a value, remove its `<mark class="todo">` wrapper too.
 | `assets/img/faq.jpg` | FAQ section, arched frame | portrait 3:4 (720 × 960) |
 
 Save photos for the web without location data: most phone cameras add it.
+
+**Logo:** made from Priya's logo artwork, with the cream paper turned transparent so it sits on any light background.
+
+| File | Where |
+|---|---|
+| `assets/img/logo.webp` (with `logo.png` as a fallback) | Hero, 840 × 840, transparent |
+| `assets/img/logo-mark.png` | Header, 144 × 144, transparent |
+| `assets/img/favicon-32.png`, `favicon-192.png` | Browser tab icons, on a cream tile |
+| `assets/img/apple-touch-icon.png` | Phone home-screen icon, 180 × 180 |
+| `assets/img/og-image.jpg`, `og-image-de.jpg` | Link previews (WhatsApp, Instagram…), 1200 × 630 |
 
 ## Before launch
 

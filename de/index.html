@@ -8,7 +8,8 @@
   <meta name="robots" content="noindex">
   <meta name="description" content="Traditionelles Sivananda-Yoga mit Priya: eine ruhige, vollständige Yogastunde, sanft und Schritt für Schritt angeleitet. Jede Woche live online und vor Ort in Deutschland. Auch ohne Vorkenntnisse. Buchung per WhatsApp.">
   <meta name="theme-color" content="#EEF0EA">
-  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon-192.png">
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 
   <!-- Link previews (WhatsApp, Instagram, etc.). Switch both URLs to https://yogadharawithpriya.com/de/ once the domain is live. -->
@@ -45,7 +46,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="#top" aria-label="Yoga Dhara with Priya, zurück nach oben">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="13" r="6" fill="#D9A21B"/><path d="M4 27c6-6 10 6 16 0s10-6 16 0" fill="none" stroke="#1F2A4D" stroke-width="2.4" stroke-linecap="round"/><path d="M9 33.5c4-3.5 7 3.5 11 0s7-3.5 11 0" fill="none" stroke="#2F6466" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <img class="brand-logo" src="../assets/img/logo-mark.png" width="48" height="48" alt="">
       Yoga Dhara
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-word">Menü</span><svg class="menu-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
@@ -87,13 +88,12 @@
       <!-- Confirm with Priya: धारा (dhārā, stream/flow) vs धरा (dharā, earth).
            The copy across the whole site builds on "stream", so if this changes, change it everywhere together. -->
       <figure class="hero-mark">
-        <span class="dhara" lang="sa">धारा</span>
-        <svg class="flow" viewBox="0 0 260 70" aria-hidden="true">
-          <path class="stream" d="M6 34c26-22 46 22 72 0s46-22 72 0 46 22 72 0 30-16 32-14"/>
-          <path class="stream stream-2" d="M30 52c20-14 36 14 56 0s36-14 56 0 36 14 56 0"/>
-          <circle class="sun" cx="232" cy="12" r="8"/>
-        </svg>
-        <figcaption><i lang="sa-Latn">dhārā</i>: ein Strom; ein steter, ununterbrochener Fluss</figcaption>
+        <picture>
+          <source srcset="../assets/img/logo.webp" type="image/webp">
+          <img class="hero-logo" src="../assets/img/logo.png" width="840" height="840" fetchpriority="high"
+               alt="Das Logo von Yoga Dhara: eine Gestalt, die sich über fließenden Wellen nach oben streckt, neben einer aufgehenden Sonne">
+        </picture>
+        <figcaption><span class="dhara" lang="sa">धारा</span><span class="dhara-meaning"><i lang="sa-Latn">dhārā</i>: ein Strom; ein steter, ununterbrochener Fluss</span></figcaption>
       </figure>
     </div>
   </section>
