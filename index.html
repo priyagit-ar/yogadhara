@@ -122,7 +122,7 @@
   </section>
 
   <!-- THE SHAPE OF A CLASS -->
-  <section class="flowband" aria-labelledby="flow-title">
+  <section class="flowband" id="class-shape" aria-labelledby="flow-title">
     <div class="wrap">
       <p class="eyebrow">A class, step by step</p>
       <h2 id="flow-title">The shape of a class</h2>
@@ -248,13 +248,13 @@
 
       <div class="intro-offer">
         <div>
-          <p class="offer-for">New to Yoga Dhara</p>
+          <p class="offer-for">For your first time</p>
           <h3>Your first class</h3>
-          <p>Online or in person, with no commitment. Come once and see how it feels. One welcome class per new student.</p>
+          <p>Online or in person, with no commitment: come once and see how it feels. One per new student.</p>
         </div>
         <div class="price-tag">
           <span class="amount"><mark class="todo">€00</mark></span>
-          <span class="per">then choose a single class or a card</span>
+          <span class="per">then a single class or a card</span>
         </div>
       </div>
 
@@ -266,10 +266,10 @@
             <tr><th scope="col">Option</th><th scope="col">Price</th><th scope="col">Per class</th><th scope="col">Valid for</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Single class, online</th><td data-label="Price"><mark class="todo">€00</mark></td><td data-label="Per class"><mark class="todo">€00</mark></td><td data-label="Valid for">the booked date</td></tr>
-            <tr><th scope="row">Single class, in person</th><td data-label="Price"><mark class="todo">€00</mark></td><td data-label="Per class"><mark class="todo">€00</mark></td><td data-label="Valid for">the booked date</td></tr>
-            <tr><th scope="row">5-class card</th><td data-label="Price"><mark class="todo">€00</mark></td><td data-label="Per class"><mark class="todo">€00</mark></td><td data-label="Valid for"><mark class="todo">3 months</mark></td></tr>
-            <tr class="best"><th scope="row">10-class card <span class="badge">Best value</span></th><td data-label="Price"><mark class="todo">€00</mark></td><td data-label="Per class"><mark class="todo">€00</mark></td><td data-label="Valid for"><mark class="todo">6 months</mark></td></tr>
+            <tr><th scope="row">Single class, online</th><td data-label="Price"><mark class="todo">€00</mark></td><td class="per" data-label="Per class"><mark class="todo">€00</mark></td><td class="valid" data-label="Valid for">the booked date</td></tr>
+            <tr><th scope="row">Single class, in person</th><td data-label="Price"><mark class="todo">€00</mark></td><td class="per" data-label="Per class"><mark class="todo">€00</mark></td><td class="valid" data-label="Valid for">the booked date</td></tr>
+            <tr><th scope="row">5-class card</th><td data-label="Price"><mark class="todo">€00</mark></td><td class="per" data-label="Per class"><mark class="todo">€00</mark></td><td class="valid" data-label="Valid for"><mark class="todo">3 months</mark></td></tr>
+            <tr class="best"><th scope="row">10-class card <span class="badge">Best value</span></th><td data-label="Price"><mark class="todo">€00</mark></td><td class="per" data-label="Per class"><mark class="todo">€00</mark></td><td class="valid" data-label="Valid for"><mark class="todo">6 months</mark></td></tr>
           </tbody>
         </table>
       </div>
@@ -284,34 +284,33 @@
             <tr><th scope="col">Plan</th><th scope="col">Per month</th><th scope="col">Per class</th><th scope="col">Minimum term</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">1 class a week</th><td data-label="Per month"><mark class="todo">€00</mark></td><td data-label="Per class"><mark class="todo">€00</mark></td><td data-label="Minimum term"><mark class="todo">3 months</mark></td></tr>
-            <tr class="best"><th scope="row">2 classes a week <span class="badge">Best value</span></th><td data-label="Per month"><mark class="todo">€00</mark></td><td data-label="Per class"><mark class="todo">€00</mark></td><td data-label="Minimum term"><mark class="todo">3 months</mark></td></tr>
+            <tr><th scope="row">1 class a week</th><td data-label="Per month"><mark class="todo">€00</mark></td><td class="per" data-label="Per class"><mark class="todo">€00</mark></td><td class="valid" data-label="Minimum term"><mark class="todo">3 months</mark></td></tr>
+            <tr class="best"><th scope="row">2 classes a week <span class="badge">Best value</span></th><td data-label="Per month"><mark class="todo">€00</mark></td><td class="per" data-label="Per class"><mark class="todo">€00</mark></td><td class="valid" data-label="Minimum term"><mark class="todo">3 months</mark></td></tr>
           </tbody>
         </table>
       </div>
-      <p class="table-note"><mark class="todo">[After the minimum term, cancel any month. Unused classes don’t carry over.]</mark></p>
+      <p class="table-note"><mark class="todo">[Minimum term 3 months, then cancel any month. No annual contract. Unused classes don’t carry over.]</mark></p>
 
+      <!-- Remove this block (and "Private sessions" under Classes) if private sessions are not offered -->
       <h3 class="price-group">Private sessions</h3>
       <div class="private-offer">
-        <div>
-          <h4>One to one, or for two</h4>
-          <p>Online or in person, built around your body, your questions and your pace. Priya will find a time with you once you’re in touch.</p>
-        </div>
-        <div class="price-tag">
-          <span class="amount"><mark class="todo">€00</mark></span>
-          <span class="per"><mark class="todo">60 minutes, up to 2 people</mark></span>
-        </div>
+        <h4>One to one, or for two</h4>
+        <p class="private-terms"><mark class="todo">€00</mark> for <mark class="todo">60</mark> minutes · online or in person · up to two people</p>
+        <p>Built around your body, your questions and your pace. <mark class="todo">[For two, that’s €00 each.]</mark> Priya will find a time with you once you’re in touch.</p>
       </div>
 
-      <h3 class="price-group">Good to know</h3>
-      <ul class="good-to-know">
-        <li>All prices are final. Nothing is added on top.</li>
-        <li>Each class lasts about <mark class="todo">90</mark> minutes.</li>
-        <li>Online classes run on <mark class="todo">Zoom</mark>. The link comes with your booking.</li>
-        <li>In-person groups stay small: <mark class="todo">12</mark> people at most.</li>
-        <li>Bring a mat and a blanket. <mark class="todo">[Mats to borrow in person?]</mark></li>
-        <li>Pay by <mark class="todo">bank transfer or PayPal</mark> once your place is confirmed.</li>
-      </ul>
+      <div class="price-info">
+        <h3>Good to know</h3>
+        <ul class="good-to-know">
+          <li>All prices are final. Nothing is added on top.</li>
+          <li>Each class lasts about <mark class="todo">90</mark> minutes.</li>
+          <li>Online classes run on <mark class="todo">Zoom</mark>. The link comes with your booking.</li>
+          <li>In-person groups stay small: <mark class="todo">12</mark> people at most.</li>
+          <li>Bring a mat and a blanket. <mark class="todo">[Mats to borrow in person?]</mark></li>
+          <li>Pay by <mark class="todo">bank transfer or PayPal</mark> once your place is confirmed.</li>
+        </ul>
+        <p class="price-more">New to yoga? Here’s <a href="#class-shape">how a class unfolds</a>, and the questions below cover the rest.</p>
+      </div>
     </div>
   </section>
 
