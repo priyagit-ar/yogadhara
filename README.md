@@ -60,6 +60,8 @@ After replacing a value, remove its `<mark class="todo">` wrapper too.
 | `assets/img/practice-4.jpg`, `practice-5.jpg` | Photo rows under the letter | portrait 3:4 (720 × 960) |
 | `assets/img/practice-6.jpg` | Photo rows under the letter | landscape 4:3 (1200 × 900) |
 | `assets/img/contact.jpg` | Contact section | square (800 × 800) |
+| `assets/img/triangle.jpg` | Beside the twelve basic postures (it shows the twelfth, the triangle) | portrait 3:4 (720 × 960) |
+| `assets/img/faq.jpg` | FAQ section, arched frame | portrait 3:4 (720 × 960) |
 
 Save photos for the web without location data: most phone cameras add it.
 

@@ -265,13 +265,24 @@ mark.todo {
 .twelve { margin-top: 3rem; padding-top: 2.25rem; border-top: 1px solid rgba(47, 100, 102, 0.25); }
 .twelve h3 { font-size: 1.35rem; margin-bottom: 1.25rem; }
 .twelve-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem 2rem; counter-reset: pose; }
-.twelve-list li { counter-increment: pose; display: grid; grid-template-columns: 1.75rem 1fr; line-height: 1.3; }
+.twelve-list li { counter-increment: pose; display: grid; grid-template-columns: 1.75rem 1fr; align-content: start; line-height: 1.3; }
 .twelve-list li::before { content: counter(pose); grid-row: span 2; font: 400 1.05rem/1.3 var(--serif); color: var(--river); }
 .twelve-list span { font-size: 1.02rem; }
 .twelve-list i { font: italic 400 0.95rem/1.35 var(--serif); color: var(--indigo-soft); }
 .twelve-note { margin: 1.5rem 0 0; max-width: 40rem; font-size: 1rem; color: var(--indigo-soft); }
-@media (max-width: 60rem) { .twelve-list { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 24rem) { .twelve-list { grid-template-columns: 1fr; } }
+/* The list sits beside a photo of the twelfth posture */
+.twelve { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 15rem); gap: 2rem 3.5rem; align-items: start; }
+.twelve .twelve-list { grid-template-columns: repeat(3, 1fr); }
+.twelve-photo { margin: 0; }
+.twelve-photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; background: var(--limewash); }
+.twelve-photo figcaption { margin-top: 0.65rem; font-size: 0.92rem; line-height: 1.45; color: var(--indigo-soft); }
+.twelve-photo figcaption i { font-family: var(--serif); color: var(--indigo); }
+@media (max-width: 60rem) {
+  .twelve { grid-template-columns: 1fr; }
+  .twelve .twelve-list { grid-template-columns: repeat(2, 1fr); }
+  .twelve-photo { max-width: 18rem; }
+}
+@media (max-width: 24rem) { .twelve .twelve-list { grid-template-columns: 1fr; } }
 
 /* Verse: Yoga Sutra 1.14 */
 .verse { background: var(--indigo); color: var(--limewash); padding-block: clamp(4rem, 9vw, 7rem); text-align: center; }
@@ -433,6 +444,11 @@ mark.todo {
 
 /* FAQ */
 .faq { max-width: 46rem; border-top: 1px solid var(--mist); }
+/* Questions on the left, an arched photo on the right that stays in view on wide screens */
+.faq-grid { display: grid; grid-template-columns: minmax(0, 46rem) minmax(0, 19rem); justify-content: space-between; gap: 2.5rem 4rem; align-items: start; }
+.faq-photo { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; background: var(--mist); border-radius: 50% 50% 6px 6px / 32% 32% 6px 6px; }
+@media (min-width: 52.01rem) { .faq-photo { position: sticky; top: 6.5rem; } }
+@media (max-width: 52rem) { .faq-grid { grid-template-columns: 1fr; } .faq-photo { max-width: 18rem; } }
 .faq details { border-bottom: 1px solid var(--mist); }
 .faq summary {
   list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;
