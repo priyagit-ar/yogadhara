@@ -55,7 +55,8 @@ After replacing a value, remove its `<mark class="todo">` wrapper too.
 
 - [ ] Confirm the name's word with Priya: **धारा** (*dhārā*, a stream) or **धरा** (*dharā*, the earth). Much of the copy builds on "stream".
 - [ ] Read the copy through with Priya, in both languages, and change anything that doesn't sound like her.
-- [ ] Check the lineage dates in the About section, and fill in her own training.
+- [ ] Have Priya read her letter in the About section (her own words, lightly edited) in both languages.
+- [ ] Add the year of her teacher training to the lineage in the About section, and check the other dates there.
 - [ ] No `class="todo"` left: `grep -rc 'class="todo"' --include=*.html .` shows 0 for every page.
 - [ ] Have the Impressum and privacy policy checked (the German versions are the ones that count legally), then delete their draft notes.
 - [ ] Delete the draft banner (`<p class="preview-note">`) from all six pages.
