@@ -18,9 +18,10 @@
   var toggle = document.querySelector(".menu-toggle");
   var nav = document.getElementById("site-nav");
   if (toggle && nav) {
+    // The button keeps its name ("Menu" / "Menü"); aria-expanded tells screen readers whether it's open,
+    // and the CSS swaps the word for a close icon, so the button never changes width
     var setOpen = function (open) {
       toggle.setAttribute("aria-expanded", String(open));
-      toggle.textContent = open ? "Close" : "Menu";
       nav.classList.toggle("is-open", open);
     };
     toggle.addEventListener("click", function () {
@@ -42,14 +43,17 @@
       var nameField = form.elements.name;
       var name = nameField.value.trim();
       if (!name) {
-        nameField.setCustomValidity("Add your name so Priya knows who's writing.");
+        nameField.setCustomValidity(form.dataset.nameMissing || "Add your name so Priya knows who's writing.");
         nameField.reportValidity();
         nameField.addEventListener("input", function clear() { nameField.setCustomValidity(""); nameField.removeEventListener("input", clear); });
         return;
       }
       var interest = form.elements.interest.value;
       var message = form.elements.message.value.trim();
-      var text = "Hi Priya, I'm " + name + ". I found Yoga Dhara online and I'm interested in " + interest + ".";
+      // The message wording comes from the page (data-template), so it matches the page's language
+      var template = form.dataset.template || "Hi Priya, I'm {name}. I found Yoga Dhara online and I'm interested in {interest}.";
+      var values = { name: name, interest: interest };
+      var text = template.replace(/\{(name|interest)\}/g, function (_, key) { return values[key]; });
       if (message) text += "\n\n" + message;
       var url = "https://wa.me/" + form.dataset.wa + "?text=" + encodeURIComponent(text);
       window.open(url, "_blank", "noopener");
@@ -69,4 +73,17 @@
   } else if (bar) {
     bar.classList.remove("is-hidden");
   }
+
+  // Language switch: land on the same section in the other language.
+  // Both language versions use the same section ids, so the id can be carried over as it is.
+  document.querySelectorAll(".lang a[hreflang]").forEach(function (link) {
+    link.addEventListener("click", function () {
+      var line = window.innerHeight * 0.3;
+      var current = "";
+      document.querySelectorAll("main section[id]").forEach(function (section) {
+        if (section.getBoundingClientRect().top <= line) current = section.id;
+      });
+      if (current && current !== "top") link.hash = current;
+    });
+  });
 })();

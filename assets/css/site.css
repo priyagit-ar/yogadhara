@@ -54,7 +54,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body {
   margin: 0;
   background: var(--limewash);
@@ -67,7 +68,9 @@ a { color: var(--river); text-decoration-thickness: 1px; text-underline-offset: 
 a:hover { color: var(--indigo); }
 :focus-visible { outline: 3px solid var(--turmeric); outline-offset: 3px; border-radius: 2px; }
 
-h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.15; margin: 0 0 0.5em; text-wrap: balance; }
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.15; margin: 0 0 0.5em; text-wrap: balance; overflow-wrap: break-word; }
+/* German has long compound words: let them hyphenate on narrow screens instead of overflowing */
+html:lang(de) { -webkit-hyphens: auto; hyphens: auto; hyphenate-limit-chars: 8 4 3; }
 h2 { font-size: clamp(2rem, 4.2vw, 2.75rem); }
 h3 { font-size: 1.5rem; }
 p { margin: 0 0 1em; text-wrap: pretty; }
@@ -141,18 +144,41 @@ mark.todo {
 .menu-toggle { display: none; }
 .header-cta { padding: 0.6em 1.15em; min-height: 2.6rem; font-size: 1rem; }
 
-@media (max-width: 52rem) {
-  .header-cta { display: none; }
+/* Language switch: EN | DE pill, the current language filled in */
+.lang { display: flex; flex: none; padding: 2px; border: 1.5px solid var(--indigo); border-radius: 999px; }
+.lang > * {
+  display: grid; place-items: center; min-width: 2.5rem; min-height: 2.3rem; padding: 0 0.55rem; border-radius: 999px;
+  font: 600 0.82rem/1 var(--sans); letter-spacing: 0.08em; color: var(--indigo); text-decoration: none;
+}
+.lang [aria-current] { background: var(--indigo); color: var(--limewash); }
+.lang a:hover { background: var(--mist); color: var(--indigo); }
+
+/* The header switches to the menu button earlier than the rest of the layout, so nav, language switch and button never crowd */
+@media (max-width: 60rem) {
+  .header-inner { gap: 0.75rem; }
   .menu-toggle {
-    display: inline-flex; align-items: center; min-height: 2.75rem; padding: 0 1rem;
+    display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; min-width: 4.6rem; padding: 0 1rem;
     font: 600 1rem/1 var(--sans); color: var(--indigo);
     background: transparent; border: 1.5px solid var(--indigo); border-radius: 999px; cursor: pointer;
   }
+  .menu-x { display: none; width: 1.3rem; height: 1.3rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+  .menu-toggle[aria-expanded="true"] .menu-x { display: block; }
+  /* Hidden visually but still read out, so the button keeps its name */
+  .menu-toggle[aria-expanded="true"] .menu-word { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .nav { position: absolute; left: 0; right: 0; top: 100%; background: var(--limewash); border-bottom: 1px solid var(--mist); display: none; }
   .nav.is-open { display: block; }
   .nav ul { flex-direction: column; gap: 0; padding: 0.5rem var(--gutter) 1rem; }
   .nav a { display: block; padding-block: 0.75rem; font-size: 1.15rem; border-bottom: 1px solid var(--mist); }
   .nav li:last-child a { border-bottom: 0; }
+  .menu-toggle { order: 1; } /* menu button at the far right, language switch just before it */
+}
+/* Below this width the booking bar at the bottom of the screen takes over from the header button */
+@media (max-width: 52rem) { .header-cta { display: none; } }
+/* Very small phones: show only the other language */
+@media (max-width: 23rem) {
+  .brand { font-size: 1.15rem; }
+  .lang { padding: 0; }
+  .lang [aria-current] { display: none; }
 }
 
 /* Hero */

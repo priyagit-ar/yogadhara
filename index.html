@@ -22,6 +22,13 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Yoga Dhara with Priya, with the Sanskrit word dhārā, a stream, above a flowing line and a rising sun">
   <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="de_DE">
+
+  <!-- Language versions for search engines. Switch these URLs too once the domain is live. -->
+  <link rel="alternate" hreflang="en" href="https://priyagit-ar.github.io/yogadhara/">
+  <link rel="alternate" hreflang="de" href="https://priyagit-ar.github.io/yogadhara/de/">
+  <link rel="alternate" hreflang="x-default" href="https://priyagit-ar.github.io/yogadhara/">
 
   <link rel="preload" href="assets/fonts/mukta-400-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/tiro-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -41,7 +48,7 @@
       <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="13" r="6" fill="#D9A21B"/><path d="M4 27c6-6 10 6 16 0s10-6 16 0" fill="none" stroke="#1F2A4D" stroke-width="2.4" stroke-linecap="round"/><path d="M9 33.5c4-3.5 7 3.5 11 0s7-3.5 11 0" fill="none" stroke="#2F6466" stroke-width="1.8" stroke-linecap="round"/></svg>
       Yoga Dhara
     </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-word">Menu</span><svg class="menu-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav class="nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="#classes">Classes</a></li>
@@ -50,6 +57,10 @@
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+    </nav>
+    <nav class="lang" aria-label="Language">
+      <span aria-current="true" lang="en"><span aria-hidden="true">EN</span><span class="visually-hidden">English</span></span>
+      <a href="de/" hreflang="de" lang="de"><span aria-hidden="true">DE</span><span class="visually-hidden">Deutsch</span></a>
     </nav>
     <a class="btn btn-primary header-cta" href="https://wa.me/49XXXXXXXXXXX?text=Hi%20Priya%2C%20I%20found%20Yoga%20Dhara%20online%20and%20I%27d%20like%20to%20book%20a%20class." target="_blank" rel="noopener">Message Priya</a>
   </div>
@@ -370,7 +381,9 @@
         <h2 id="contact-title">Your first class starts with a message</h2>
         <p class="muted measure">WhatsApp is the quickest way to reach Priya. Say hello, tell her what you’d like to try, and she’ll reply personally.</p>
 
-        <form class="compose" id="compose" data-wa="49XXXXXXXXXXX" novalidate>
+        <form class="compose" id="compose" data-wa="49XXXXXXXXXXX" novalidate
+              data-template="Hi Priya, I'm {name}. I found Yoga Dhara online and I'm interested in {interest}."
+              data-name-missing="Add your name so Priya knows who's writing.">
           <div class="field">
             <label for="c-name">Your name</label>
             <input id="c-name" name="name" type="text" autocomplete="given-name" required>
