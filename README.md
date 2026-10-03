@@ -49,7 +49,16 @@ grep -rl '49XXXXXXXXXXX' --include=*.html . | xargs sed -i 's/49XXXXXXXXXXX/4915
 
 After replacing a value, remove its `<mark class="todo">` wrapper too.
 
-**Photos:** replace `assets/img/class.jpg` (landscape, 1200 × 900) and `assets/img/priya.jpg` (portrait, 800 × 1000). Keep the file names and both languages pick them up.
+**Photos** (both languages use the same files; to swap one, replace the file and keep its shape):
+
+| File | Where | Shape |
+|---|---|---|
+| `assets/img/class.jpg` | Classes section | portrait 4:5 (880 × 1100) |
+| `assets/img/priya.jpg` | About, next to Priya's letter | portrait 4:5 (960 × 1200) |
+| `assets/img/practice-1.jpg` | Photo row under the letter | landscape 4:3 (1200 × 900) |
+| `assets/img/practice-2.jpg`, `practice-3.jpg` | Photo row under the letter | portrait 3:4 (720 × 960) |
+
+Save photos for the web without location data: most phone cameras add it.
 
 ## Before launch
 
