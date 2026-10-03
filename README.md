@@ -24,11 +24,10 @@ Everything still to be filled in is wrapped in `<mark class="todo">…</mark>` a
 grep -n 'class="todo"' *.html
 ```
 
-Values that repeat across pages are quickest to replace in one go:
+The WhatsApp number appears on every page, so it's quickest to replace in one go:
 
 ```sh
-grep -rln '49XXXXXXXXXXX' *.html | xargs sed -i 's/49XXXXXXXXXXX/49151XXXXXXXX/g'   # WhatsApp number, digits only
-grep -rln 'instagram.com/HANDLE' *.html | xargs sed -i 's#instagram.com/HANDLE#instagram.com/yourhandle#g'
+grep -rln '49XXXXXXXXXXX' *.html | xargs sed -i 's/49XXXXXXXXXXX/49151XXXXXXXX/g'   # digits only, no + or spaces
 ```
 
 After replacing a value, remove its `<mark class="todo">` wrapper too.
