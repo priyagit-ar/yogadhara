@@ -55,8 +55,11 @@ After replacing a value, remove its `<mark class="todo">` wrapper too.
 |---|---|---|
 | `assets/img/class.jpg` | Classes section | portrait 4:5 (880 × 1100) |
 | `assets/img/priya.jpg` | About, next to Priya's letter | portrait 4:5 (960 × 1200) |
-| `assets/img/practice-1.jpg` | Photo row under the letter | landscape 4:3 (1200 × 900) |
-| `assets/img/practice-2.jpg`, `practice-3.jpg` | Photo row under the letter | portrait 3:4 (720 × 960) |
+| `assets/img/practice-1.jpg` | Photo rows under the letter | landscape 4:3 (1200 × 900) |
+| `assets/img/practice-2.jpg`, `practice-3.jpg` | Photo rows under the letter | portrait 3:4 (720 × 960) |
+| `assets/img/practice-4.jpg`, `practice-5.jpg` | Photo rows under the letter | portrait 3:4 (720 × 960) |
+| `assets/img/practice-6.jpg` | Photo rows under the letter | landscape 4:3 (1200 × 900) |
+| `assets/img/contact.jpg` | Contact section | square (800 × 800) |
 
 Save photos for the web without location data: most phone cameras add it.
 
