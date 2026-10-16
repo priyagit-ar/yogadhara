@@ -1,6 +1,6 @@
 # Yoga Dhara with Priya
 
-The website for Priya's traditional Sivananda yoga classes, live online and in person in Germany, in English and German.
+The website for Priya's Hatha yoga classes (drawing on her Sivananda training), live online and in person in Germany, in English and German.
 
 **Live (draft):** https://priyagit-ar.github.io/yogadhara/ (English) · https://priyagit-ar.github.io/yogadhara/de/ (Deutsch)
 
@@ -15,13 +15,13 @@ de/impressum.html     Impressum (German)
 de/datenschutz.html   Datenschutzerklärung (German)
 assets/css/           one stylesheet, shared by both languages
 assets/js/            menu, WhatsApp form, mobile booking bar, language switch
-assets/fonts/         Tiro Devanagari Sanskrit + Mukta (SIL Open Font License)
+assets/fonts/         Cormorant, Allura and Mukta (SIL Open Font License)
 assets/img/           photos, logo, link-preview images (EN and DE), icons
 ```
 
 ## Two languages
 
-Each page has a German twin, and the EN | DE switch in the header links the two. Switching keeps the reader in the same section, because both versions use the same section ids (`#classes`, `#about`, `#prices`, `#faq`, `#contact`). Nothing is stored in the browser, so the privacy policy stays true.
+Each page has a German twin, and the EN | DE switch in the header links the two. Switching keeps the reader in the same section, because both versions use the same section ids (`#classes`, `#about`, `#prices`, `#contact`, plus `#faq` for the questions under the prices). Nothing is stored in the browser, so the privacy policy stays true.
 
 **When you change text, change it in both languages:**
 
@@ -53,15 +53,14 @@ After replacing a value, remove its `<mark class="todo">` wrapper too.
 
 | File | Where | Shape |
 |---|---|---|
+| `assets/img/practice-1.jpg` | Wide photo under the opening | landscape 4:3 (1200 × 900), shown cropped to 21:9 |
 | `assets/img/class.jpg` | Classes section | portrait 4:5 (880 × 1100) |
-| `assets/img/priya.jpg` | About, next to Priya's letter | portrait 4:5 (960 × 1200) |
-| `assets/img/practice-1.jpg` | Photo rows under the letter | landscape 4:3 (1200 × 900) |
-| `assets/img/practice-2.jpg`, `practice-3.jpg` | Photo rows under the letter | portrait 3:4 (720 × 960) |
-| `assets/img/practice-4.jpg`, `practice-5.jpg` | Photo rows under the letter | portrait 3:4 (720 × 960) |
-| `assets/img/practice-6.jpg` | Photo rows under the letter | landscape 4:3 (1200 × 900) |
-| `assets/img/contact.jpg` | Contact section | square (800 × 800) |
-| `assets/img/triangle.jpg` | Beside the twelve basic postures (it shows the twelfth, the triangle) | portrait 3:4 (720 × 960) |
-| `assets/img/faq.jpg` | FAQ section, arched frame | portrait 3:4 (720 × 960) |
+| `assets/img/priya.jpg` | About, next to Priya's letter, arched frame | portrait 4:5 (960 × 1200) |
+| `assets/img/practice-4.jpg`, `practice-3.jpg` | Photo row under the letter | portrait 3:4 (720 × 960) |
+| `assets/img/practice-6.jpg` | Photo row under the letter, middle | landscape 4:3 (1200 × 900) |
+| `assets/img/faq.jpg` | Contact section, arched frame | portrait 3:4 (720 × 960) |
+
+Photos taken off the page (`contact.jpg`, `triangle.jpg`, `practice-2.jpg`, `practice-5.jpg`) are still in the git history if Priya wants one back.
 
 Save photos for the web without location data: most phone cameras add it.
 
@@ -77,10 +76,9 @@ Save photos for the web without location data: most phone cameras add it.
 
 ## Before launch
 
-- [ ] Confirm the name's word with Priya: **धारा** (*dhārā*, a stream) or **धरा** (*dharā*, the earth). Much of the copy builds on "stream".
+- [ ] Priya approves the new lettering (YOGA *dhārā* with Priya: Cormorant + Allura), and decides whether the header should use it too.
 - [ ] Read the copy through with Priya, in both languages, and change anything that doesn't sound like her.
-- [ ] Have Priya read her letter in the About section (her own words, lightly edited) in both languages.
-- [ ] Add the year of her teacher training to the lineage in the About section, and check the other dates there.
+- [ ] Swap in Priya's own shorter About text when it's ready (the current one is her letter, shortened), in both languages.
 - [ ] No `class="todo"` left: `grep -rc 'class="todo"' --include=*.html .` shows 0 for every page.
 - [ ] Have the Impressum and privacy policy checked (the German versions are the ones that count legally), then delete their draft notes.
 - [ ] Delete the draft banner (`<p class="preview-note">`) from all six pages.

@@ -76,11 +76,12 @@
 
   // Language switch: land on the same section in the other language.
   // Both language versions use the same section ids, so the id can be carried over as it is.
+  // [data-anchor] marks a spot inside a section worth landing on too (the questions under the prices).
   document.querySelectorAll(".lang a[hreflang]").forEach(function (link) {
     link.addEventListener("click", function () {
       var line = window.innerHeight * 0.3;
       var current = "";
-      document.querySelectorAll("main section[id]").forEach(function (section) {
+      document.querySelectorAll("main section[id], main [data-anchor][id]").forEach(function (section) {
         if (section.getBoundingClientRect().top <= line) current = section.id;
       });
       if (current && current !== "top") link.hash = current;
