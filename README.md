@@ -68,14 +68,22 @@ Save photos for the web without location data: most phone cameras add it.
 
 ## Before launch
 
-- [ ] Priya approves the new lettering (YOGA *dhārā* with Priya: Cormorant + Allura), and decides whether the header should use it too.
+- [ ] Priya picks the lettering (one-line or stacked, Wave 2 in her feedback doc) and approves the developed logo option 2; then use them in the opening, the header, the favicons and the link-preview images.
 - [ ] Read the copy through with Priya, in both languages, and change anything that doesn't sound like her.
-- [ ] Swap in Priya's own shorter About text when it's ready (the current one is her letter, shortened), in both languages.
+- [ ] Swap in Priya's revised About text when it's ready (the current one is her full original letter), in both languages.
+- [ ] Prices, card validity, online schedule and platform, venue: all marked "To be confirmed" until Priya sends them. Monthly plans are hidden in an HTML comment in the prices section until she confirms them.
+- [ ] The cancellation policy in the questions is Priya's draft, under review.
 - [ ] No `class="todo"` left: `grep -rc 'class="todo"' --include=*.html .` shows 0 for every page.
 - [ ] Have the Impressum and privacy policy checked (the German versions are the ones that count legally), then delete their draft notes.
 - [ ] Delete the draft banner (`<p class="preview-note">`) from all six pages.
 - [ ] Delete `<meta name="robots" content="noindex">` from all six pages so search engines can find the site.
-- [ ] Custom domain (optional): add a `CNAME` file containing `yogadharawithpriya.com`, point the domain's DNS at GitHub Pages and tick "Enforce HTTPS" under Settings → Pages. Then replace `https://priyagit-ar.github.io/yogadhara/` with the new domain in all six pages (the `og:` and `hreflang` lines):
+- [ ] Custom domain, **only after Priya approves the site for launch**. `yogadharawithpriya.com` is registered at Squarespace and stays there; its Google Workspace email (`contact@yogadharawithpriya.com`) must keep working.
+  1. In Squarespace's DNS settings, **leave the MX records and any Google TXT/CNAME records (SPF, DKIM, verification) untouched**. Only add or change the website records:
+     - four `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` (remove any old Squarespace website `A` records for `@`)
+     - a `CNAME` record for `www` pointing to `priyagit-ar.github.io`
+  2. Add a `CNAME` file to this repo containing `yogadharawithpriya.com`, set the custom domain under Settings → Pages, and tick "Enforce HTTPS" once the certificate is issued.
+  3. Send a test email to `contact@yogadharawithpriya.com` to confirm mail still arrives.
+  4. Replace `https://priyagit-ar.github.io/yogadhara/` with the new domain in all six pages (the `og:` and `hreflang` lines):
 
   ```sh
   grep -rl 'priyagit-ar.github.io/yogadhara/' --include=*.html . | xargs sed -i 's#https://priyagit-ar.github.io/yogadhara/#https://yogadharawithpriya.com/#g'

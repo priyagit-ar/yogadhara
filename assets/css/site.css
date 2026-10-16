@@ -219,6 +219,7 @@ mark.todo { background: var(--todo); color: var(--ink); padding: 0 0.2em; border
 .intro-offer mark.todo { background: #8A7A3E; color: #FFF6DC; }
 .price-tag { flex: 0 0 auto; text-align: right; }
 .price-tag .amount { display: block; font: 500 clamp(2.6rem, 5vw, 3.2rem)/1 var(--serif); color: var(--paper); }
+.price-tag .amount.tbc { font-size: 1.35rem; line-height: 1.2; }
 .price-tag .per { display: block; margin-top: 0.4rem; font-size: 0.92rem; color: #E6E4D6; }
 
 .price-group { margin: 3.5rem 0 0.3em; }
