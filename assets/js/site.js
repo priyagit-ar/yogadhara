@@ -35,34 +35,9 @@
     });
   }
 
-  // WhatsApp compose form: builds a prefilled message and opens WhatsApp. Nothing is sent to this site.
-  var form = document.getElementById("compose");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var nameField = form.elements.name;
-      var name = nameField.value.trim();
-      if (!name) {
-        nameField.setCustomValidity(form.dataset.nameMissing || "Add your name so Priya knows who's writing.");
-        nameField.reportValidity();
-        nameField.addEventListener("input", function clear() { nameField.setCustomValidity(""); nameField.removeEventListener("input", clear); });
-        return;
-      }
-      var interest = form.elements.interest.value;
-      var message = form.elements.message.value.trim();
-      // The message wording comes from the page (data-template), so it matches the page's language
-      var template = form.dataset.template || "Hi Priya, I'm {name}. I found Yoga Dhara online and I'm interested in {interest}.";
-      var values = { name: name, interest: interest };
-      var text = template.replace(/\{(name|interest)\}/g, function (_, key) { return values[key]; });
-      if (message) text += "\n\n" + message;
-      var url = "https://wa.me/" + form.dataset.wa + "?text=" + encodeURIComponent(text);
-      window.open(url, "_blank", "noopener");
-    });
-  }
-
-  // Mobile WhatsApp bar: hide it while another WhatsApp button is already on screen (hero buttons, contact form)
+  // Mobile WhatsApp bar: hide it while the contact details (with their own WhatsApp link) are on screen
   var bar = document.getElementById("wa-bar");
-  var targets = [document.getElementById("hero-actions"), document.getElementById("contact")].filter(Boolean);
+  var targets = [document.getElementById("contact")].filter(Boolean);
   if (bar && targets.length && "IntersectionObserver" in window) {
     var visible = new Set();
     var io = new IntersectionObserver(function (entries) {
@@ -81,8 +56,10 @@
     link.addEventListener("click", function () {
       var line = window.innerHeight * 0.3;
       var current = "";
+      var atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
       document.querySelectorAll("main section[id], main [data-anchor][id]").forEach(function (section) {
-        if (section.getBoundingClientRect().top <= line) current = section.id;
+        // At the very bottom the last section counts as current, even when it is too short to reach the line
+        if (atBottom || section.getBoundingClientRect().top <= line) current = section.id;
       });
       if (current && current !== "top") link.hash = current;
     });

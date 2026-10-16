@@ -17,6 +17,7 @@ assets/css/           one stylesheet, shared by both languages
 assets/js/            menu, WhatsApp form, mobile booking bar, language switch
 assets/fonts/         Cormorant, Allura and Mukta (SIL Open Font License)
 assets/img/           photos, logo, link-preview images (EN and DE), icons
+review/               preview images for Priya's feedback doc (logo and lettering options); not linked from the site
 ```
 
 ## Two languages
@@ -41,12 +42,6 @@ Everything still to be filled in is wrapped in `<mark class="todo">…</mark>` a
 grep -rn 'class="todo"' --include=*.html .
 ```
 
-The WhatsApp number appears on every page, so it's quickest to replace in one go:
-
-```sh
-grep -rl '49XXXXXXXXXXX' --include=*.html . | xargs sed -i 's/49XXXXXXXXXXX/49151XXXXXXXX/g'   # digits only, no + or spaces
-```
-
 After replacing a value, remove its `<mark class="todo">` wrapper too.
 
 **Photos** (both languages use the same files; to swap one, replace the file and keep its shape):
@@ -56,11 +51,8 @@ After replacing a value, remove its `<mark class="todo">` wrapper too.
 | `assets/img/practice-1.jpg` | Wide photo under the opening | landscape 4:3 (1200 × 900), shown cropped to 21:9 |
 | `assets/img/class.jpg` | Classes section | portrait 4:5 (880 × 1100) |
 | `assets/img/priya.jpg` | About, next to Priya's letter, arched frame | portrait 4:5 (960 × 1200) |
-| `assets/img/practice-4.jpg`, `practice-3.jpg` | Photo row under the letter | portrait 3:4 (720 × 960) |
-| `assets/img/practice-6.jpg` | Photo row under the letter, middle | landscape 4:3 (1200 × 900) |
-| `assets/img/faq.jpg` | Contact section, arched frame | portrait 3:4 (720 × 960) |
 
-Photos taken off the page (`contact.jpg`, `triangle.jpg`, `practice-2.jpg`, `practice-5.jpg`) are still in the git history if Priya wants one back.
+Priya asked for three photos only. The ones taken off the page (`contact.jpg`, `triangle.jpg`, `faq.jpg`, `practice-2.jpg` to `practice-6.jpg`) are still in the git history if Priya wants one back.
 
 Save photos for the web without location data: most phone cameras add it.
 

@@ -199,17 +199,6 @@ mark.todo { background: var(--todo); color: var(--ink); padding: 0 0.2em; border
 .offer .when { color: var(--ink-soft); font-size: 0.98rem; margin: 0; }
 .offer .when strong { font-weight: 600; color: var(--ink); }
 
-/* Photos of Priya's practice: one landscape, two portraits, all the same height */
-.practice { display: grid; grid-template-columns: 9fr 16fr 9fr; gap: 1rem; align-items: start; }
-.practice img { width: 100%; height: auto; object-fit: cover; background: var(--cream-deep); }
-.practice .wide { aspect-ratio: 4 / 3; }
-.practice .tall { aspect-ratio: 3 / 4; }
-.split + .practice { margin-top: clamp(3rem, 7vw, 5.5rem); }
-@media (max-width: 40rem) {
-  .practice { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
-  .practice .wide { grid-column: 1 / -1; grid-row: 1; }
-}
-
 /* About: Priya's letter, in her own words */
 .letter { font: 400 1.32rem/1.6 var(--serif); color: var(--ink); max-width: 34rem; }
 .letter p { margin-bottom: 1em; }
@@ -281,23 +270,14 @@ mark.todo { background: var(--todo); color: var(--ink); padding: 0 0.2em; border
   .price-table .best > * { background: none; }
 }
 
-/* Contact */
-.compose { display: grid; gap: 1.1rem; margin-top: 2rem; max-width: 32rem; }
-.field label { display: block; font-weight: 600; margin-bottom: 0.35rem; font-size: 0.98rem; }
-.field input, .field select, .field textarea {
-  width: 100%; font: 400 1.05rem/1.4 var(--sans); color: var(--ink);
-  background: var(--paper); border: 1px solid var(--line); border-radius: 2px; padding: 0.75rem 0.9rem;
-}
-.field textarea { min-height: 7rem; resize: vertical; }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--olive); box-shadow: 0 0 0 1px var(--olive); }
-.compose .btn { justify-self: start; }
-.compose-note { font-size: 0.92rem; margin: 0; color: var(--ink-soft); }
-.direct { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
-.direct dl { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 2rem; }
-.direct dt { color: var(--ink-soft); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
-.direct dd { margin: 0.15rem 0 0; font-size: 1.08rem; overflow-wrap: anywhere; }
-.direct a { color: var(--ink); }
-@media (max-width: 40rem) { .direct dl { grid-template-columns: 1fr; } }
+/* Contact: "Let's connect", just the details */
+.connect { text-align: center; }
+.connect dl { margin: clamp(2rem, 5vw, 3rem) auto 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem clamp(2rem, 5vw, 4rem); }
+.connect dl > div { min-width: 0; }
+.connect dt { color: var(--ink-soft); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.connect dd { margin: 0.4rem 0 0; font-size: 1.08rem; overflow-wrap: anywhere; }
+.connect a { color: var(--ink); }
+@media (max-width: 30rem) { .connect dl { flex-direction: column; align-items: center; } }
 
 /* Footer */
 .site-footer { background: var(--olive-deep); color: #D9D6C5; padding-block: 2.5rem; font-size: 0.95rem; }
