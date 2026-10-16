@@ -35,9 +35,9 @@
     });
   }
 
-  // Mobile WhatsApp bar: hide it while the contact details (with their own WhatsApp link) are on screen
+  // Mobile WhatsApp bar: hide it while the opening button or the contact details are on screen, so it never covers them
   var bar = document.getElementById("wa-bar");
-  var targets = [document.getElementById("contact")].filter(Boolean);
+  var targets = [document.getElementById("hero-cta"), document.getElementById("contact")].filter(Boolean);
   if (bar && targets.length && "IntersectionObserver" in window) {
     var visible = new Set();
     var io = new IntersectionObserver(function (entries) {
