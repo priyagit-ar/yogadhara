@@ -178,6 +178,7 @@ mark.todo { background: var(--todo); color: var(--ink); padding: 0 0.2em; border
 .section { padding-block: var(--section); }
 .band { background: var(--cream-deep); }
 .lede { font-size: 1.2rem; color: var(--ink-soft); max-width: 34rem; }
+.lede-note { margin: -0.5rem 0 0; font-weight: 600; color: var(--olive-dark); }
 
 /* Image beside text */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 7vw, 6.5rem); align-items: start; }
